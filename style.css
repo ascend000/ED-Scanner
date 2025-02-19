@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --background-color: #0F1626;
+    --text-color: #FFFFFF;
+    --border-radius: 16px;
+}
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+textarea,
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 1.5rem 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    resize: none;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+    background: transparent;
+    color: var(--text-color);
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: scale(1.05);
+}
+
+.qr-popup {
+    display: none;
+    margin-top: 30px;
+}
+
+.qr-popup.show-img {
+    display: block;
+}
+
+img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Customize the html5-qrcode scanner */
+#reader {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Adjust the gap between elements */
+}
+
+.html5-qrcode-element {
+    border-radius: var(--border-radius);
+}
+
+.html5-qrcode-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.html5-qrcode-button:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    transform: scale(1.05);
+}
+
+.html5-qrcode-camera-select {
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+}
+
+.html5-qrcode-select-camera {
+    margin-bottom: 10px;
+}
+
+.output {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ecf0f1;
+    border-radius: var(--border-radius);
+    word-wrap: break-word;
+    display: none;
+    color: black;
+}
+
+#scanAgain {
+    display: none;
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
